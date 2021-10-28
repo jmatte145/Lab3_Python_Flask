@@ -9,7 +9,7 @@ app.config["Debug"] = True
 
 @app.route('/', methods=['GET'])
 def home():
-    return "<h1>Justin Matte Lab 3 Part 1 Submission</h1><p>Welcome!</p>"
+    return "<h1>Justin M Lab 3 Part 1 Submission</h1><p>Welcome!</p>"
 
 
 @app.route("/<name>")
