@@ -76,7 +76,6 @@ def get_avg_salary():
     return "The Average Salary is {:.2f}$".format(avg_sal)
 
 
-# Work in Progress (Must be Finished)
 def show_age_info():
     lowest_salary = 10000000
     highest_salary = 0
