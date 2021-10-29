@@ -66,9 +66,9 @@ def update_task(task_id):
         abort(400)
     if 'done' in request.json and type(request.json['done']) is not bool:
         abort(400)
-    task[0]['title'] = request.json.get('title', task[0]['title'])
-    task[0]['description'] = request.json.get('description', task[0]['description'])
-    task[0]['done'] = request.json.get('done', task[0]['done'])
+    task[0]['title'] = request.json[0]['title']
+    task[0]['description'] = request.json[0]['description']
+    task[0]['done'] = request.json[0]['done']
     return jsonify({'task': task[0]})
 
 
