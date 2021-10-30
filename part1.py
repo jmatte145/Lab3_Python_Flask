@@ -55,6 +55,23 @@ def get_task_by_id(task_id):
         return jsonify(results)
     else:
         return "Error: No id field provided. Please specify an id."
+    
+    
+@app.route('/api/v1/resources/tasks', methods=['POST'])
+def add_task():
+    task = {}
+    length = len(tasks)
+    if not request.json:
+        abort(400)
+    if 'done' in request.json and type(request.json['done']) is not bool:
+        abort(400)
+    if request.json:
+        task['id'] = int(length + 1)
+        task['title'] = request.json['title']
+        task['description'] = request.json['description']
+        task['done'] = request.json['done']
+        tasks.append(task)
+    return jsonify(tasks)
 
 
 @app.route('/api/v1/resources/tasks/<int:task_id>', methods=['PUT'])
