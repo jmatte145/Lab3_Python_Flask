@@ -67,9 +67,9 @@ def add_task():
         abort(400)
     if request.json:
         task['id'] = int(length + 1)
-        task['title'] = request.json['title']
-        task['description'] = request.json['description']
-        task['done'] = request.json['done']
+        task['title'] = request.json[0]['title']
+        task['description'] = request.json[0]['description']
+        task['done'] = request.json[0]['done']
         tasks.append(task)
     return jsonify(tasks)
 
